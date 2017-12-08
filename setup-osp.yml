@@ -13,7 +13,6 @@
       name: osp_instance
       vars_from: frontend.yml
 
-
   - name: Create app1 instance
     include_role: 
       name: osp_instance
