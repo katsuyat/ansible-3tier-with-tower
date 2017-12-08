@@ -5,5 +5,32 @@
    - osp_keypair
    - osp_securitygroup
    - osp_flavor
-   - osp_fetch
+   # - osp_fetch #move to bottom
 
+  tasks: 
+  - name: Create frontend instance
+    include_role: 
+      name: osp-instance
+      vars_from: frontend.yml
+
+
+  - name: Create app1 instance
+    include_role: 
+      name: osp-instance
+      vars_from: app1.yml
+  
+  - name: create app2 instance
+    include_role: 
+      name: osp-instance
+      vars_from: app2.yml
+  
+  - name: create db instance
+    include_role: 
+      name: osp-instance
+      vars_from: db.yml
+
+  - name: Gather facts
+    include_role: 
+      name: osp-fetch
+    tags: 
+      - test_inventory
