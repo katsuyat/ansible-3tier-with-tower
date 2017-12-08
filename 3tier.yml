@@ -2,14 +2,14 @@
 - name: Deploy 3tier Env
   gather_facts: false
   become: true
-  hosts: all # hosts
+  hosts: jumpbox # hosts
   roles: 
     - common
 
 - name: Deploy postgres 
   gather_facts: false
   become: true
-  hosts: appdbs
+  hosts: jumpbox
   roles: 
     -  postgres
 
@@ -17,7 +17,7 @@
 - name: Deploy apache and apps
   gather_facts: false
   become: true
-  hosts: apps
+  hosts: jumpbox
   roles: 
     - http
     - tomcat
@@ -27,6 +27,6 @@
 - name: Deploy haproxy
   gather_facts: false
   become: true
-  hosts: frontends
+  hosts: jumpbox
   roles: 
     - haproxy
