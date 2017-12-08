@@ -4,7 +4,7 @@
       name: "{{ instance_name }}"
       image: rhel-guest
       meta: "group={{ group }},deployment_name={{ deployment }}"
-      flavor: "{{ flavor_name }}"
+      flavor: m2.small
       security_groups: ICMP_and_SSH
       key_name: ansible_ssh
       nics:
