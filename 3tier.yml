@@ -1,0 +1,16 @@
+- hosts: jumpbox
+  gather_facts: true
+  roles:
+   #- osp_network
+   #- osp_security
+   #- osp_flavor
+   - { role: osp_instance, webserver_name
+   - osp_fetch
+
+
+- hosts: webservers
+  gather_facts: false
+  become: yes
+  roles: 
+   - { role: setup_instance, service_name: httpd , app_num: ap1} 
+   - { role: setup_instance, service_name: httpd , app_num: ap2} 

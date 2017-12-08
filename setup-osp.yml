@@ -1,0 +1,9 @@
+- hosts: jumpbox
+  gather_facts: true
+  roles:
+   - osp_network
+   - osp_keypair
+   - osp_securitygroup
+   - osp_flavor
+   - osp_fetch
+
