@@ -15,7 +15,8 @@
         cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
         curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
         cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-    register: webserverip
+    register: instanceip
+
   - name: Add floating IP to webserver
     os_floating_ip:
       cloud: ospcloud
