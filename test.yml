@@ -1,0 +1,10 @@
+--- 
+- hosts: jumpbox
+  gather_facts: false
+  become: true
+
+  tasks: 
+  - name: Ping test
+    ping:
+    tags: 
+     - ping_test
