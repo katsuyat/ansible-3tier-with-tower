@@ -10,27 +10,27 @@
   tasks: 
   - name: Create frontend instance
     include_role: 
-      name: osp-instance
+      name: osp_instance
       vars_from: frontend.yml
 
 
   - name: Create app1 instance
     include_role: 
-      name: osp-instance
+      name: osp_instance
       vars_from: app1.yml
   
   - name: create app2 instance
     include_role: 
-      name: osp-instance
+      name: osp_instance
       vars_from: app2.yml
   
   - name: create db instance
     include_role: 
-      name: osp-instance
+      name: osp_instance
       vars_from: db.yml
 
   - name: Gather facts
     include_role: 
-      name: osp-fetch
+      name: osp_fetch
     tags: 
       - test_inventory
